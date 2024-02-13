@@ -15,6 +15,7 @@ const FilteresContainer = styled.div`
   select {
     width: 165px;
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 
