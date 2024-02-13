@@ -31,32 +31,32 @@ const PopupContainer = styled.div`
 
 const Popup = ({ character, onClose }) => {
 
-    useEffect(() => {
-        const handleEscKey = (event) => {
-          if (event.key === 'Escape') {
-            onClose();
-          }
-        };
-    
-        document.addEventListener('keydown', handleEscKey);
-    
-        return () => {
-          document.removeEventListener('keydown', handleEscKey);
-        };
-      }, [onClose]);
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
 
-    return (
-        <Overlay onClick={(event) => event.target === event.currentTarget && onClose()}>
-            <PopupContainer>
-                <img src={character.image} alt={character.name} />
-                <h2>{character.name}</h2>
-                <p>Status: {character.status}</p>
-                <p>Gender: {character.gender}</p>
-                <p>Species: {character.species}</p>
-                <p>Location: {character.location.name}</p>
-            </PopupContainer>
-        </Overlay>
-    );
+    document.addEventListener('keydown', handleEscKey);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [onClose]);
+
+  return (
+    <Overlay onClick={(event) => event.target === event.currentTarget && onClose()}>
+      <PopupContainer>
+        <img src={character.image} alt={character.name} />
+        <h2>{character.name}</h2>
+        <p>Status: {character.status}</p>
+        <p>Gender: {character.gender}</p>
+        <p>Species: {character.species}</p>
+        <p>Location: {character.location.name}</p>
+      </PopupContainer>
+    </Overlay>
+  );
 };
 
 export default Popup;
