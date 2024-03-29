@@ -12,12 +12,14 @@ const FooterContainer = styled.footer`
   .telegram {
     width: 34px;
     height: 34px;
-    background-image: url(${telegram});
-    background-repeat: no-repeat;
-    background-size: cover;
 
     &:hover {
       opacity: 0.8;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;  
     }
   }
 `;
@@ -25,7 +27,9 @@ const FooterContainer = styled.footer`
 const Footer = () => {
     return (
         <FooterContainer>
-            <a className='telegram' target='_blank' rel='noreferrer' href='https://t.me/anastasiiakunstman' />
+            <a className='telegram' target='_blank' rel='noreferrer' href='https://t.me/anastasiiakunstman'>
+              <img src={telegram} alt='telegram' />
+            </a>
             <p>Anastasiia Kunstman © {new Date().getFullYear()}</p>
         </FooterContainer>
     )
