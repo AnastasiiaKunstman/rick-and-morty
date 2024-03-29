@@ -9,11 +9,11 @@ const FooterContainer = styled.footer`
   gap: 30px;
   align-items: center;
 
-  a {
-    background: url(${telegram}) no-repeat;
-    background-size: cover;
+  .telegram {
     width: 34px;
     height: 34px;
+    background: url(${telegram}) no-repeat;
+    background-size: cover;
 
     &:hover {
       opacity: 0.8;
@@ -24,7 +24,7 @@ const FooterContainer = styled.footer`
 const Footer = () => {
     return (
         <FooterContainer>
-            <a target='_blank' rel='noreferrer' href='https://t.me/anastasiiakunstman' />
+            <a className='telegram' target='_blank' rel='noreferrer' href='https://t.me/anastasiiakunstman' />
             <p>Anastasiia Kunstman © {new Date().getFullYear()}</p>
         </FooterContainer>
     )
