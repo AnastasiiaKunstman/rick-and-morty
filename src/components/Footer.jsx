@@ -12,7 +12,8 @@ const FooterContainer = styled.footer`
   .telegram {
     width: 34px;
     height: 34px;
-    background: url(${telegram}) no-repeat;
+    background-image: url(${telegram});
+    background-repeat: no-repeat;
     background-size: cover;
 
     &:hover {
